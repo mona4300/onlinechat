@@ -1,0 +1,11 @@
+<div class="container">
+	<%= form_tag({ controller: 'chat', action: 'join'}, method: 'post',class: "form-signin") do %>
+    <h2 class="form-signin-heading">
+    	Welcome to Online Chat
+    </h2>
+  	<label for="inputUsername" class="sr-only">Username</label>
+    <%= text_field_tag 'inputUsername', nil, class: "form-control", placeholder:"Enter your username", required: true, autofocus: true%>
+    <br/>
+    <%= submit_tag 'Join Chat', class: 'btn btn-lg btn-primary btn-block' %>
+  <% end %>
+</div>
