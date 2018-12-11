@@ -1,0 +1,12 @@
+<div class="container">
+	<%= form_for @user, url: users_url , html: { method: 'post', class: "form-signin" } do |f| %>
+    <h2 class="form-signin-heading">Welcome to Online Chat</h2>
+  	<label for="username" class="sr-only">Username</label>
+    <%= f.text_field 'username', class: "form-control", placeholder:"Enter your username", autofocus: true%>
+    <br/>
+    <% @user.errors.full_messages_for(:username).each do |msg| %>
+    	<p class="text-danger"><%= msg %></p>
+    <% end %>
+    <%= submit_tag 'Join Chat', class: 'btn btn-lg btn-primary btn-block' %>
+  <% end %>
+</div>

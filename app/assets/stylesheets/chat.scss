@@ -75,7 +75,7 @@ div.messages {
 
 div.message-adding {
   width: 100%;
-  height: 80px;
+  height: 15%;
   background-color: pink;
   position: absolute;
   bottom: 0;
@@ -83,8 +83,7 @@ div.message-adding {
 }
 
 div.messages-container {
-  height: 100%;
+  height: 85%;
   width: 100%;
   overflow-y: scroll; 
-  padding-bottom: 100px;
 }

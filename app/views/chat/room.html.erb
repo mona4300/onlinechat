@@ -1,0 +1,32 @@
+<div class="container">
+	<div class="sub-container users">
+		<div class="card">
+      <ul class="list-group list-group-flush">
+        <% @names.each do |name| %>
+          <li class="list-group-item"><%= name %></li>
+        <% end %>
+      </ul>
+    </div>
+	</div>
+	<div class="sub-container messages">
+		<div class="messages-container">
+			<div class="card">
+        <ul class="list-group list-group-flush">
+        </ul>
+      </div>
+		</div>
+		<div class="message-adding">
+			<form class="form" id="sendMessageForm">
+        <div class="form-row">
+          <div class="col-md-10">
+            <label class="sr-only" for="inputMessage">Message</label>
+            <textarea id="inputMessage" class="form-control"></textarea>
+          </div>
+          <div class="col-md-2">
+            <button type="submit" class="btn btn-primary btn-lg mt-2 disabled">Send</button>
+          </div>
+        </div>
+      </form>
+		</div>
+	</div>
+</div>
