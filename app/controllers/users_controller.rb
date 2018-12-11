@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
 	def new
-    redirect_to room_url if session[:username]
+    redirect_to room_url if current_user
     @user = User.new
   end
 
@@ -20,5 +20,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:username)
   end
-
 end

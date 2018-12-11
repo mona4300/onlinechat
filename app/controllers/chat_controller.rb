@@ -9,7 +9,7 @@ class ChatController < ApplicationController
   private
 
   def check_user
-    redirect_to root_url unless session[:username]
+    redirect_to root_url unless current_user
   end
 
 end
