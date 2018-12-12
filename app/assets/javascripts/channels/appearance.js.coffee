@@ -1,7 +1,11 @@
 App.cable.subscriptions.create "AppearanceChannel",
   # Called when the subscription is ready for use on the server.
   connected: ->
-  	@perform("join")
+    @perform("join")
+
+  disconnected: ->
+    location.reload()
+    
 
   received: (data) ->
     username = data['username']

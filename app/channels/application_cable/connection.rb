@@ -8,11 +8,13 @@ module ApplicationCable
  
     private
       def find_verified_user
-        if verified_user = User.find_by(username: request.session[:username])
-          verified_user
-        else
-          reject_unauthorized_connection
-        end
+        verified_user = User.find_by(
+          username: request.session[:username],
+          token: request.session[:token]
+        )
+        puts "User name:#{verified_user.try(:username)} token: #{verified_user.try(:token)}"
+        reject_unauthorized_connection if verified_user.nil?
+        verified_user
       end
   end
 end
